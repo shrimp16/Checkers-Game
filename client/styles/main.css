@@ -31,6 +31,10 @@
   width: 100%;
   border-radius: 50%;
   background-color: darkred;
+  margin: auto;
+}
+.red-piece.special {
+  background-color: purple;
 }
 
 .white-piece {
@@ -38,4 +42,7 @@
   width: 100%;
   border-radius: 50%;
   background-color: white;
+}
+.white-piece.special {
+  background-color: lightblue;
 }/*# sourceMappingURL=main.css.map */

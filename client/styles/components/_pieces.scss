@@ -3,6 +3,11 @@
     width: 100%;
     border-radius: 50%;
     background-color: darkred;
+    margin: auto;
+
+    &.special {
+        background-color: purple;
+    }
 }
 
 .white-piece {
@@ -10,4 +15,8 @@
     width: 100%;
     border-radius: 50%;
     background-color: white;
+
+    &.special {
+        background-color: lightblue
+    }
 }
