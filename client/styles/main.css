@@ -26,6 +26,10 @@
   background-color: white;
 }
 
+.selected {
+  border: 3px blue solid;
+}
+
 .red-piece {
   height: 100%;
   width: 100%;
