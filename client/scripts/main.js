@@ -6,13 +6,7 @@ for (let i = 0; i < redPieces.length; i++) {
     redPieces[i].addEventListener('click', () => {
         console.log(i);
 
-        //this removes all the current blue squares
-        for (let i = 0; i < gameSquares.length; i++) {
-            if (gameSquares[i].classList.contains('selected')) {
-                gameSquares[i].classList.remove('selected');
-            }
-        }
-
+        cleanMoveOptions();
         //this adds the blue squares
 
         /*if (i % 8 === 0) {
@@ -22,10 +16,18 @@ for (let i = 0; i < redPieces.length; i++) {
             gameSquares[i + 4].classList.add('selected');
         }*/
 
-        markMove(i);
+        markMoveRed(i);
     })
 }
 
-function markMove(id) {
-    gameSquares[id + 4].classList.add('selected');
+function cleanMoveOptions() {
+    for (let i = 0; i < gameSquares.length; i++) {
+        if (gameSquares[i].classList.contains('selected')) {
+            gameSquares[i].classList.remove('selected');
+        }
+    }
+}
+
+function markMoveRed(id) {
+    gameSquares[id + 6].classList.add('selected');
 }
