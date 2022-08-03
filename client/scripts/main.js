@@ -1,11 +1,6 @@
 let gameSquares = document.querySelectorAll('.board-square:not(.white)');
 let redPieces = document.querySelectorAll('.red-piece');
-let whitePieces = document.querySelectorAll('.white-piece')
-
-/*console.log(redPieces);
-console.log(whitePieces);
-console.log(gameSquares);
-*/
+let whitePieces = document.querySelectorAll('.white-piece');
 
 for (let i = 0; i < redPieces.length; i++) {
     redPieces[i].addEventListener('click', () => {
@@ -20,11 +15,17 @@ for (let i = 0; i < redPieces.length; i++) {
 
         //this adds the blue squares
 
-        if (i % 8 === 0) {
+        /*if (i % 8 === 0) {
             gameSquares[i + 4].classList.add('selected');
         } else {
             gameSquares[i + 3].classList.add('selected');
             gameSquares[i + 4].classList.add('selected');
-        }
+        }*/
+
+        markMove(i);
     })
+}
+
+function markMove(id) {
+    gameSquares[id + 4].classList.add('selected');
 }
