@@ -2,32 +2,40 @@ let gameSquares = document.querySelectorAll('.board-square:not(.white)');
 let redPieces = document.querySelectorAll('.red-piece');
 let whitePieces = document.querySelectorAll('.white-piece');
 
-for (let i = 0; i < redPieces.length; i++) {
+
+/*for (let i = 0; i < redPieces.length; i++) {
     redPieces[i].addEventListener('click', () => {
         console.log(i);
 
         cleanMoveOptions();
         //this adds the blue squares
 
-        /*if (i % 8 === 0) {
+        if (i % 8 === 0) {
             gameSquares[i + 4].classList.add('selected');
         } else {
             gameSquares[i + 3].classList.add('selected');
             gameSquares[i + 4].classList.add('selected');
-        }*/
+        }
 
         markMoveRed(i);
     })
+} */
+
+redPieces.forEach((piece) => {
+    piece.addEventListener('click', () => redPieceLogic(piece))
+});
+
+
+function redPieceLogic(piece) {
+    console.log(piece);
+    cleanMoveOptions();
+    markMoveRed(piece);
 }
 
 function cleanMoveOptions() {
-    for (let i = 0; i < gameSquares.length; i++) {
-        if (gameSquares[i].classList.contains('selected')) {
-            gameSquares[i].classList.remove('selected');
-        }
-    }
+    redPieces.forEach(({ classList }) => classList.remove('selected'))
 }
 
-function markMoveRed(id) {
-    gameSquares[id + 6].classList.add('selected');
+function markMoveRed({ classList }) {
+    classList.add('selected');
 }
